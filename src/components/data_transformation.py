@@ -30,7 +30,6 @@ class DataTransformation:
         This function is responsible for data transformation based on the different types of data
         
         '''
-        logging.info("Entered the data transformation method or component")
         try:
             numerical_columns = ["writing_score", "reading_score"]
             categorical_columns = [
@@ -38,7 +37,7 @@ class DataTransformation:
                 "race_ethnicity",
                 "parental_level_of_education",
                 "lunch",
-                "test_preparation_course"
+                "test_preparation_course",
             ]
             # this pipeline under training dataset
             num_pipeline = Pipeline(
@@ -122,7 +121,7 @@ class DataTransformation:
             return (
                 train_arr,
                 test_arr,
-                self.data_transformation_config.preprocessor_obj_file_path
+                self.data_transformation_config.preprocessor_obj_file_path,
             )
         except Exception as e: 
             raise CustomException(e, sys)
